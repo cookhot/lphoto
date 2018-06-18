@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const ip = process.env.LOCAL_IP ? process.env.LOCAL_IP : '127.0.0.1'
+const HOST = process.env.HOST ? process.env.HOST : '0.0.0.0'
 
-const baseUrl = `http://${ip}:3000`
+const baseUrl = `http://${HOST}:3000`
 
 const getImgs = (params) => {
   return axios(`${baseUrl}/img`, { params })

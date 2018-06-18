@@ -1,0 +1,9 @@
+{
+  "tabs": [
+    {"id": 0, "title": "首页", "path": "/index"},
+    {"id": 1, "title": "珍藏", "path": "/favorite"},
+    {"id": 2, "title": "评论", "path": "/comments"},
+    {"id": 3, "title": "用户", "path": "/setting"}
+  ],
+  "tabIndex": 0
+}

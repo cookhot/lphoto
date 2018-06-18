@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index'
-import Setting from '@/page/setting'
-import Favorite from '@/page/favorite'
 
 const Comment = (resolve) => {
   import('@/page/comment').then((module) => {
@@ -36,6 +34,18 @@ const Location = (resolve) => {
 
 const Comments = (resolve) => {
   import('@/page/comments').then((module) => {
+    resolve(module)
+  })
+}
+
+const Favorite = (resolve) => {
+  import('@/page/favorite').then((module) => {
+    resolve(module)
+  })
+}
+
+const Setting = (resolve) => {
+  import('@/page/setting').then((module) => {
     resolve(module)
   })
 }
