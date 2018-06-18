@@ -1,6 +1,6 @@
 const os = require('os')
 
-module.exports.getLocalIp = () => {
+const getLocalIp = () => {
   const ipTable = {}, iFaces = os.networkInterfaces();
 
   for (let dev in iFaces) {
@@ -11,5 +11,7 @@ module.exports.getLocalIp = () => {
     });
   }
 
-  return ipTable
+  return ipTable['en0:1']
 }
+
+module.exports.localIp = getLocalIp()
