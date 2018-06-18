@@ -1,0 +1,55 @@
+@import "./variable";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f4f4f4;
+  font-size: 12px
+}
+
+.l-fullpage {
+  @include full-page;
+}
+
+.l-masker {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: -1;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+.l-remark-txt {
+  @include remark-txt()
+}
+
+.page-fade-enter, .page-fade-leave-to  {
+  transform: translateX(100%);
+}
+
+.page-bottom-fade-enter, .page-bottom-fade-leave-to {
+  transform: translateY(100%);
+}
+
+.page-fade-enter-active, .page-fade-leave-active {
+  transition: transform 0.3s;
+}
+
+.page-bottom-fade-enter-active, .page-bottom-fade-leave-active {
+  transition: transform 0.3s;
+}

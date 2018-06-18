@@ -1,0 +1,46 @@
+/* 1px 样式*/
+@import './variable';
+@import 'mixins';
+
+$feature: -webkit-min-device-pixel-ratio;
+
+@mixin no-border {
+  position: relative;
+  border: none !important;
+}
+
+@mixin border-position($x, $y) {
+  transform-origin: $x $y;
+}
+
+@mixin border-scale($s) {
+  transform: scale(1/$s);
+  width: 100% * $s;
+  height: 100% * $s
+}
+
+@mixin l-px($radius: 0, $color: #ccc, $border: null) {
+  @each $value in (1.5, 2, 3) {
+    @media screen and ($feature: $value) {
+      @include no-border;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: $radius;
+        @if $border != null {
+          border-#{$border}: 1px solid $color;
+        } @else {
+          border: 1px solid $color;
+          border-radius: $radius * 2;
+        }
+        @include border-position(0, 0);
+        @include border-scale($value);
+        pointer-events: none;
+
+      }
+    }
+  }
+}
