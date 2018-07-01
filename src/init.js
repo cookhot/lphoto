@@ -10,6 +10,7 @@ import 'font-awesome/scss/font-awesome.scss'
 import '@/common/scss/normalize.scss'
 import '@/common/scss/base.scss'
 
+// TODO 优化 加载图片和错误图片
 export default (Vue) => {
   Vue.use(VueLazyload, {
     preLoad: 1.3,

@@ -1,4 +1,4 @@
-// 混入全局的操作
+// 页面刷新时候，tabs准确定位
 const plugin = {
   install (Vue) {
     Vue.mixin({
