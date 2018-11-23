@@ -1,4 +1,4 @@
-import { baseUrl } from './api'
+import { baseUrl } from '../base/api'
 
 const formatting = [{val: 60, unit: '分钟'},
   {val: 24, unit: '小时'},
